@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <title>Redirecting...</title>
 
-    <!-- Strongest possible redirect -->
     <script>
-      window.location.replace("https://www.youtube.com/watch?v=c3nqCv4se7E");
-    </script>
+      // Take all query parameters from the email link
+      const params = new URLSearchParams(window.location.search);
 
-    <!-- Backup redirect if JS is slow -->
-    <meta http-equiv="refresh" content="0; url=https://www.youtube.com/watch?v=c3nqCv4se7E">
+      // Forward them to your Coaches 4 tracking script
+      const tracking = "https://script.google.com/macros/s/AKfycbwN24s6L1O-tai7GuWYsQbhRFIcGfQ0ailQBwVwP5LXGFVrIQ1wT0SuRY4V2EJkZbZ5/exec";
+
+      // Redirect to Coaches 4 with the same parameters
+      window.location.href = tracking + "?" + params.toString();
+    </script>
   </head>
 
   <body>
