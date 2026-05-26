@@ -5,13 +5,12 @@
     <title>Redirecting...</title>
 
     <script>
-      // Get encoded data
-      const encoded = new URLSearchParams(window.location.search).get("d");
+      const params = new URLSearchParams(window.location.search);
+      const encoded = params.get("d");
 
-      // Coaches 4 URL
+      // Forward to Apps Script
       const tracking = "https://script.google.com/macros/s/AKfycbwN24s6L1O-tai7GuWYsQbhRFIcGfQ0ailQBwVwP5LXGFVrIQ1wT0SuRY4V2EJkZbZ5/exec";
 
-      // Forward to Coaches 4
       window.location.href = tracking + "?d=" + encoded;
     </script>
   </head>
