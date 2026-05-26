@@ -5,14 +5,23 @@
     <title>Redirecting...</title>
 
     <script>
-      // Forward parameters to Coaches 4
       const params = new URLSearchParams(window.location.search);
+
+      // 2️⃣ Send click to Coaches 4
       const tracking = "https://script.google.com/macros/s/AKfycbwN24s6L1O-tai7GuWYsQbhRFIcGfQ0ailQBwVwP5LXGFVrIQ1wT0SuRY4V2EJkZbZ5/exec";
+
+      // 3️⃣ YouTube fallback
+      const youtube = "https://www.youtube.com/watch?v=c3nqCv4se7E";
+
+      // Try Apps Script first
       window.location.href = tracking + "?" + params.toString();
+
+      // If Apps Script is blocked, go to YouTube after 600ms
+      setTimeout(() => {
+        window.location.href = youtube;
+      }, 600);
     </script>
   </head>
 
-  <body>
-    Redirecting...
-  </body>
+  <body>Redirecting...</body>
 </html>
