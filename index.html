@@ -4,16 +4,11 @@
     <meta charset="UTF-8">
     <title>Redirecting...</title>
 
-    <script>
-      // Take all query parameters from the email link
-      const params = new URLSearchParams(window.location.search);
-
-      // Forward them to your Coaches 4 tracking script
-      const tracking = "https://script.google.com/macros/s/AKfycbwN24s6L1O-tai7GuWYsQbhRFIcGfQ0ailQBwVwP5LXGFVrIQ1wT0SuRY4V2EJkZbZ5/exec";
-
-      // Redirect to Coaches 4 with the same parameters
-      window.location.href = tracking + "?" + params.toString();
-    </script>
+ <script>
+  const params = new URLSearchParams(window.location.search);
+  const tracking = "https://script.google.com/macros/s/AKfycbwN24s6L1O-tai7GuWYsQbhRFIcGfQ0ailQBwVwP5LXGFVrIQ1wT0SuRY4V2EJkZbZ5/exec";
+  window.location.href = tracking + "?" + params.toString();
+</script>
   </head>
 
   <body>
